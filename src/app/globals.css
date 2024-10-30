@@ -2,20 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.bgGred {
+  background: linear-gradient(180deg, rgba(20, 20, 52, 0) 0%, #141434 80.37%);
+  backdrop-filter: blur(1.399999976158142px);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.special:nth-child(5):hover p {
+  color: #E66DFF;
+}
+
+.special:nth-child(5):hover {
+  border-color: #E66DFF;
+}
+.special:hover span:first-child {
+  color: #E66DFF;
+}
+
+.bgImage{
+  background-image: url('/BG Vector.png');
+  object-fit: cover;
 }
