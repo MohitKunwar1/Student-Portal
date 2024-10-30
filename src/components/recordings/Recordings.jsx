@@ -70,7 +70,7 @@ const Recordings = () => {
       </div>
       <Modal setModal={setModal} modal={modal}>
         <div
-          className={`fixed inset-0 z-20  cursor-pointer ${
+          className={`fixed inset-0 z-30  cursor-pointer ${
             modal ? "visible opacity-100" : "invisible opacity-0"
           } `}
         >
@@ -121,8 +121,8 @@ const AccessRecordings = ({
           }`}
         >
           <div className="absolute w-full h-full bg-bgImage bg-center bg-cover top-0 right-0 mix-blend-multiply"></div>
-          <HiOutlinePlayCircle className="center absolute z-10 w-[24px] h-[24px] text-white group-hover:hidden" />
-          <span className="absolute z-10 text-white text-xs hidden pgroup-hover:inline">
+          <HiOutlinePlayCircle className="center absolute  w-[24px] h-[24px] text-white group-hover:hidden" />
+          <span className="absolute  text-white text-xs hidden group-hover:inline">
             play now
           </span>
         </div>

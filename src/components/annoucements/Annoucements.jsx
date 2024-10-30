@@ -4,7 +4,7 @@ import { LuClipboardList } from "react-icons/lu";
 import Schedules from "../schedules/Schedules";
 import QuickLinks from "../quickLinks/QuickLinks";
 
-const Annoucements = () => {
+const Annoucements = ({setLiveClasses}) => {
   return (
     <div className=" min-h-full flex flex-col gap-3 md:items-start items-center justify-center mx-auto md:mx-0">
       <h3 className="text-[#3A3A3A] font-bold text-xl md:text-3xl mr-36 ">
@@ -33,7 +33,7 @@ const Annoucements = () => {
       <QuickLinks /> 
       </div>
       <div className="mt-5 md:mt-0">
-      <Schedules />
+      <Schedules setLiveClasses={setLiveClasses}/>
       </div>
     </div>
   );

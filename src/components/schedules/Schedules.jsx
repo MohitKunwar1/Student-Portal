@@ -1,7 +1,8 @@
 "use client";
 import { CiVideoOn } from "react-icons/ci";
 
-const Schedules = () => {
+const Schedules = ({setLiveClasses}) => {
+
   return (
     <section className="flex flex-col gap-3">
       <h3 className="text-[#3A3A3A] font-bold text-xl md:text-3xl ">
@@ -14,6 +15,7 @@ const Schedules = () => {
           detail="Class 7, Science | Live Class"
           timing="Tuesday, 5:00 - 5:50 PM"
           days="Yesterday"
+          click={() => setLiveClasses(true)}
         />
         <ClassSchedule
           detail="Class 7, Science | Live Class"
@@ -21,11 +23,13 @@ const Schedules = () => {
           days="Today"
           style="bg-[#E66DFF] "
           textStyle="text-white"
+          click={() => setLiveClasses(false)}
         />
         <ClassSchedule
           detail="Class 7, Science | Live Class"
           timing="Tuesday, 5 - 5:50 PM"
           days="Tomorrow"
+          click={() => setLiveClasses(false)}
         />
         <ClassSchedule
           detail="Class 7, Science | Live Class"
@@ -33,6 +37,7 @@ const Schedules = () => {
           days="23rd Sept.  2024"
           style="bg-[#FDF5FF]"
           textStyle="text-[#E66DFF]"
+          click={() => setLiveClasses(false)}
         />
       </div>
 
@@ -42,26 +47,29 @@ const Schedules = () => {
           detail="Class 7, Science | Live Class"
           timing="Tuesday, 5:00 - 5:50 PM"
           days="Yesterday"
+          click={() => setLiveClasses(false)}
+
         />
         <ClassSchedule
           detail="Class 7, Science | Live Class"
           timing="Tuesday, 5:00 - 5:50 PM"
-          days="Yesterday"
+          days="Today"
           style="bg-[#FDF5FF]"
           textStyle="text-[#E66DFF]"
+          click={() => setLiveClasses(true)}
         />
       </div>
-      <div></div>
     </section>
   );
 };
 
 export default Schedules;
 
-const ClassSchedule = ({ detail, timing, days, style, textStyle }) => {
+const ClassSchedule = ({ detail, timing, days, style, textStyle, click }) => {
   return (
     <div
-      className={`w-[296px] h-[57px] md:w-[354px] md:h-[60px]  rounded-md flex justify-center items-center md:gap-16 ${
+      onClick={click}
+      className={`w-[296px] h-[57px] md:w-[354px] md:h-[60px]  rounded-md flex justify-center items-center md:gap-16 cursor-pointer ${
         style ? style : "bg-[#F2F2FF]"
       }`}
     >
